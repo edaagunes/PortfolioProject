@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+
+<h2 class="mb-4">İstatistikler</h2>
+
+<div class="alert alert-info">Toplam Mesaj Sayısı: <b>@ViewBag.messageCount</b></div>
+<div class="alert alert-warning">Okunmuş Mesaj Sayısı: <b>@ViewBag.messageCountIsReadByTrue</b></div>
+<div class="alert alert-danger">Okunmamış Mesaj Sayısı: <b>@ViewBag.messageCountIsReadByFalse</b></div>
+<div class="alert alert-success">Yetenek Sayısı: <b>@ViewBag.skillCount</b></div>
+<div class="alert alert-primary">Yeteneklerin Toplam Puanı: <b>@ViewBag.totalSkillValue</b></div>
+<div class="alert alert-secondary">Ortalama Yetenek Puanı: <b>@ViewBag.averageSkillValue</b></div>
+<div class="alert alert-secondary" style="background-color:lightpink">Mevcut Email Adresi: <b>@ViewBag.getEmailFromProfile</b></div>
+<div class="alert alert-secondary" style="background-color:lightcyan">Son Eklenen Kategori: <b>@ViewBag.getLastCategoryName</b></div>
