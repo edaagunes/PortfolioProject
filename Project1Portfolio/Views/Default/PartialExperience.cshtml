@@ -1,0 +1,40 @@
+﻿@model List<Project1Portfolio.Models.Experience>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-lg-3">
+                <div class="experience-header bg-dark h-100 pt-6 pe-6 pb-6">
+                    <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+                        <p class="text-white sub-title">Deneyimler</p>
+                        <h1 class="display-6 text-white mb-0">İş Deneyimlerim</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="experience-content h-100 pt-6 ps-6 pb-6">
+                    @foreach (var item in Model)
+                    {
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <p class="fs-5 mb-0 me-4">@item.CompanyName</p>
+                                        <div>
+                                            <span class="fa fa-calendar me-1"></span> @item.WorkDate
+                                        </div>
+                                    </div>
+                                    <h4 class="mb-3">@item.Title</h4>
+                                    <p class="mb-0">
+                                      @item.Description
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

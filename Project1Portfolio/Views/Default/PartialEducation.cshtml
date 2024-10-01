@@ -1,0 +1,39 @@
+﻿@model List<Project1Portfolio.Models.Education>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-lg-3">
+                <div class="education-header bg-dark h-100 pt-6 pe-6 pb-6">
+                    <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+                        <p class="text-white sub-title">Eğitim</p>
+                        <h1 class="display-6 text-white mb-0">Lisans ve Diğer Eğitimlerim</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="education-content h-100 pt-6 ps-6 pb-6">
+                    @foreach (var item in Model)
+                    {
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="education-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <p class="fs-5 mb-0 me-4">@item.Title</p>
+                                        <div>
+                                            <span class="fa fa-calendar me-1"></span> @item.EducationDate
+                                        </div>
+                                    </div>
+                                    <h4 class="mb-3">@item.Subtitle</h4>
+                                    <p class="mb-0">
+                                        @item.Description
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

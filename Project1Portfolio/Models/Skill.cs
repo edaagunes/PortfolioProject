@@ -14,7 +14,7 @@ namespace Project1Portfolio.Models
     
     public partial class Skill
     {
-        public int SkilID { get; set; }
+        public int SkillID { get; set; }
         public string Title { get; set; }
         public string Icon { get; set; }
         public Nullable<byte> Value { get; set; }

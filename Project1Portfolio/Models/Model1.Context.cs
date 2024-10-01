@@ -32,9 +32,9 @@ namespace Project1Portfolio.Models
         public virtual DbSet<Message> Message { get; set; }
         public virtual DbSet<Profile> Profile { get; set; }
         public virtual DbSet<Service> Service { get; set; }
-        public virtual DbSet<Skill> Skill { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Testimonial> Testimonial { get; set; }
         public virtual DbSet<Work> Work { get; set; }
+        public virtual DbSet<Skill> Skill { get; set; }
     }
 }
