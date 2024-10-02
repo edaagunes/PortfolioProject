@@ -25,6 +25,14 @@ namespace Project1Portfolio
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            //Font-awesome
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                          "~/Content/bootstrap.css",
+                          "~/Content/ekimba.css",
+                          "~/Content/w3.css",
+                          "~/Content/font-awesome.min.css",
+                          "~/Content/site.css"));
         }
     }
 }

@@ -66,5 +66,12 @@ namespace Project1Portfolio.Controllers
             var values = context.Experience.ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult PartialSkills()
+        {
+            var values = context.Skill.ToList();
+            return PartialView(values);
+        }
+        
     }
 }

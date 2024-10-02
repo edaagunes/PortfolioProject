@@ -1,0 +1,39 @@
+﻿@model List<Project1Portfolio.Models.Skill>
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-lg-3">
+                <div class="skills-header h-100 bg-dark pt-6 pe-6 pb-6">
+                    <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+                        <p class="text-white sub-title">Yetenekler</p>
+                        <h1 class="display-6 text-white mb-0">Yeteneklerim</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="skills-content h-100 pt-6 ps-6 pb-6">
+
+                    <div class="row g-4">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-6 col-md-4 col-lg-4 col-xl-3">
+                                <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="text-primary text-center mb-3"><i class="@item.Icon"></i></div>
+                                    <div class="counter-counting d-flex justify-content-center">
+                                        <h4 class="display-6" data-toggle="counter-up">@item.Value</h4>
+                                        <h4 class="display-6">%</h4>
+                                    </div>
+                                    <p class="mb-0">@item.Title</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
