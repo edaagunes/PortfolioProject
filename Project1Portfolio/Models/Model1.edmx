@@ -14,6 +14,14 @@
           <Property Name="Detail" Type="nvarchar" MaxLength="1000" />
           <Property Name="ImageUrl" Type="nvarchar" MaxLength="250" />
         </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="20" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" />
+        </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CategoryID" />
@@ -62,7 +70,7 @@
           </Key>
           <Property Name="ProfileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="varchar" MaxLength="100" />
-          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="Description" Type="varchar(max)" />
           <Property Name="Address" Type="varchar" MaxLength="150" />
           <Property Name="Email" Type="varchar" MaxLength="30" />
           <Property Name="PhoneNumber" Type="varchar" MaxLength="30" />
@@ -87,6 +95,16 @@
           <Property Name="Title" Type="nvarchar" MaxLength="50" />
           <Property Name="Icon" Type="nvarchar" MaxLength="100" />
           <Property Name="Value" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="SocialMedia">
+          <Key>
+            <PropertyRef Name="SocialMediaID" />
+          </Key>
+          <Property Name="SocialMediaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="50" />
+          <Property Name="SocialMediaUrl" Type="varchar(max)" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -132,6 +150,7 @@
         </Association>
         <EntityContainer Name="MyPortfolioDbModelStoreContainer">
           <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Experience" EntityType="Self.Experience" Schema="dbo" store:Type="Tables" />
@@ -139,6 +158,7 @@
           <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SocialMedia" EntityType="Self.SocialMedia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Testimonial" EntityType="Self.Testimonial" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Work" EntityType="Self.Work" Schema="dbo" store:Type="Tables" />
@@ -210,7 +230,7 @@
           </Key>
           <Property Name="ProfileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
@@ -285,6 +305,8 @@
             <End Role="Message" EntitySet="Message" />
           </AssociationSet>
           <EntitySet Name="Skill" EntityType="MyPortfolioDbModel.Skill" />
+          <EntitySet Name="SocialMedia" EntityType="MyPortfolioDbModel.SocialMedia" />
+          <EntitySet Name="Admin" EntityType="MyPortfolioDbModel.Admin" />
         </EntityContainer>
         <EntityType Name="Skill">
           <Key>
@@ -294,6 +316,24 @@
           <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Icon" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Value" Type="Byte" />
+        </EntityType>
+        <EntityType Name="SocialMedia">
+          <Key>
+            <PropertyRef Name="SocialMediaID" />
+          </Key>
+          <Property Name="SocialMediaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Icon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="SocialMediaUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -422,6 +462,26 @@
                 <ScalarProperty Name="Icon" ColumnName="Icon" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SocialMedia">
+            <EntityTypeMapping TypeName="MyPortfolioDbModel.SocialMedia">
+              <MappingFragment StoreEntitySet="SocialMedia">
+                <ScalarProperty Name="SocialMediaUrl" ColumnName="SocialMediaUrl" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SocialMediaID" ColumnName="SocialMediaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="MyPortfolioDbModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

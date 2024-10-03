@@ -1,0 +1,25 @@
+﻿@model List<Project1Portfolio.Models.SocialMedia>
+<div class="container-fluid footer bg-dark border-bottom-0">
+    <div class="container wow fadeIn" data-wow-delay="0.1s">
+        <div class="row g-0">
+            <div class="col-12">
+                <div class="footer-content h-100 pt-6 ps-6 pb-6">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-12 text-center">
+                            <div class="d-flex justify-content-center">
+                                @foreach (var item in Model)
+                                {
+                                    <a class="btn btn-light btn-md-square me-3" href="@item.SocialMediaUrl"><i class="@item.Icon"></i></a>
+                                }
+                            </div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-body me-2"></i>Eda Güneş</a>, Tüm hakları sakllıdır.</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

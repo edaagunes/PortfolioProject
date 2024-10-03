@@ -1,0 +1,47 @@
+﻿@model List<Project1Portfolio.Models.Service>
+<div class="container-fluid" id="pigraService">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-lg-3">
+                <div class="service-header h-100 bg-dark pt-6 pe-6 pb-6">
+                    <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+                        <p class="text-white sub-title">Hizmetlerim</p>
+                        <h1 class="display-6 text-white mb-0">Neler yapabilirim</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="service-content h-100 pt-6 ps-6 pb-6">
+                    @foreach (var item in Model)
+                    {
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="service-item p-4 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col-xl-2">
+                                        <i class="@item.Icon"></i>
+                                    </div>
+                                    <div class="col-xl-3">
+                                        <a href="#" class="h4 mb-0">@item.Title</a>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <p class="mb-0">
+                                            @item.Description
+                                        </p>
+                                    </div>
+                                    <div class="col-xl-3">
+                                        <p><i class="fa fa-check me-2"></i>ASP .Net</p>
+                                        <p><i class="fa fa-check me-2"></i>MSSQL</p>
+                                        <p class="mb-0"><i class="fa fa-check me-2"></i>ASP .NET MVC</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                    <br />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

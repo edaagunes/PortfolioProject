@@ -1,4 +1,6 @@
-﻿<div class="container-fluid" id="pigraAbout">
+﻿@model List<Project1Portfolio.Models.SocialMedia>
+
+<div class="container-fluid" id="pigraAbout">
     <div class="container">
         <div class="row g-0">
             <div class="col-12 col-lg-3">
@@ -16,10 +18,10 @@
                             <div class="about-img bg-light p-4 wow fadeInUp" data-wow-delay="0.1s">
                                 <img src="@ViewBag.imageUrl" class="img-fluid w-100" alt="Image">
                                 <div class="sosial-icon">
-                                    <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-facebook-f text-white"></i></a>
-                                    <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-twitter text-white"></i></a>
-                                    <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-instagram text-white"></i></a>
-                                    <a class="btn btn-primary btn-sm-square mb-0" href="#"><i class="fab fa-linkedin-in text-white"></i></a>
+                                    @foreach (var item in Model)
+                                    {
+                                        <a class="btn btn-primary btn-sm-square mb-3" href="@item.SocialMediaUrl"><i class="@item.Icon"></i></a>
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -28,8 +30,9 @@
                             <p class="mb-4">
                                 @ViewBag.description
                             </p>
-                            
-                            <a href="#" class="btn btn-primary py-2 px-4"> <i class="fas fa-download me-2"></i>CV'mi İndirin</a>
+
+                            <a href="@Url.Action("DownloadCV", "Admin")" class="btn btn-primary py-2 px-4"> <i class="fas fa-download me-2"></i>CV'mi İndirin</a>
+                         
                         </div>
                     </div>
                 </div>
@@ -37,3 +40,4 @@
         </div>
     </div>
 </div>
+

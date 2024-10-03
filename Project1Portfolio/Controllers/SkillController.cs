@@ -14,7 +14,7 @@ namespace Project1Portfolio.Controllers
         MyPortfolioDbEntities context= new MyPortfolioDbEntities();
         public ActionResult SkillList(int page=1)
         {
-            var values = context.Skill.ToList().ToPagedList(page,6);
+            var values = context.Skill.ToList().ToPagedList(page,5);
             return View(values);
         }
 

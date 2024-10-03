@@ -28,5 +28,23 @@ namespace Project1Portfolio.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult DownloadCV()
+        {
+            // Dosya yolunu kontrol edin
+            var filePath = Server.MapPath("~/Content/images/EdaGunes_CV.pdf");
+
+            // Eğer dosya yoksa bir hata döndür
+            if (!System.IO.File.Exists(filePath))
+            {
+                return HttpNotFound("Dosya bulunamadı.");
+            }
+
+            var fileName = "EdaGunes_CV.pdf";
+            var contentType = "image/jpeg/pdf";
+
+            // Dosya indirilebilir olarak döndür
+            return File(filePath, contentType, fileName);
+        }
     }
 }
