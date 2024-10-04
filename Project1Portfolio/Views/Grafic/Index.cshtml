@@ -1,0 +1,85 @@
+﻿@model List<Project1Portfolio.Models.Skill>
+@{
+    List<string> skillName = new List<string>();
+    List<int> skillValue = new List<int>();
+
+    foreach (var item in Model)
+    {
+        skillName.Add(item.Title);
+        skillValue.Add((int)item.Value);
+    }
+}
+
+ if ($("#pieChart").length) {
+                var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
+                var pieChart = new Chart(pieChartCanvas, {
+                    type: 'pie',
+                    data: {
+                        datasets: [{
+
+                       data: [@skillValue[0], @skillValue[1], @skillValue[2], @skillValue[3],@skillValue[4], @skillValue[5], @skillValue[6], @skillValue[7],,@skillValue[8], @skillValue[9], @skillValue[10], @skillValue[11],@skillValue[12], @skillValue[13], @skillValue[14], @skillValue[15]],
+                    backgroundColor: [
+                    '#3F51B5',
+                    '#f8ac5a',
+                    '#00c2b2',
+                    '#f15050',
+                    '#3F51B5',
+                    '#f8ac5a',
+                    '#00c2b2',
+                    '#f15050',
+                    '#3F51B5',
+                    '#f8ac5a',
+                    '#00c2b2',
+                    '#f15050',
+                    '#3F51B5',
+                    '#f8ac5a',
+                    '#00c2b2',
+                    '#f15050'
+                    ],
+                    borderColor: [
+                    '#3F51B5',
+                    '#f8ac5a',
+                    '#00c2b2',
+                    '#f15050',
+                    '#3F51B5',
+                    '#f8ac5a',
+                    '#00c2b2',
+                    '#f15050','#3F51B5',
+                    '#f8ac5a',
+                    '#00c2b2',
+                    '#f15050','#3F51B5',
+                    '#f8ac5a',
+                    '#00c2b2',
+                    '#f15050',
+                    ],
+                    }],
+
+
+                    labels: [
+                    '@skillName[0]',
+                    '@skillName[1]',
+                    '@skillName[2]',
+                    '@skillName[3]',
+                    '@skillName[4]',
+                    '@skillName[5]',
+                    '@skillName[6]',
+                    '@skillName[7]',
+                    '@skillName[8]',
+                    '@skillName[9]',
+                    '@skillName[10]',
+                    '@skillName[11]',
+                    '@skillName[12]',
+                    '@skillName[13]',
+                    '@skillName[14]',
+                    '@skillName[15]',
+                    ]
+                    },
+                    options: {
+                    responsive: true,
+                    animation: {
+                    animateScale: true,
+                    animateRotate: true
+                    }
+                    }
+                    });
+                    }

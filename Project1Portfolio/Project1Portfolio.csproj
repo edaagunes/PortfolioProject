@@ -144,6 +144,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\ExperienceController.cs" />
+    <Compile Include="Controllers\GraficController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -170,6 +171,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Experience.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GraficChart.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Message.cs">
@@ -316,10 +320,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
-    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
-    <Content Include="Rotativa\wkhtmltoimage.exe" />
-    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -715,6 +715,8 @@
     <Content Include="Views\Work\WorkList.cshtml" />
     <Content Include="Views\Work\CreateWork.cshtml" />
     <Content Include="Views\Work\UpdateWork.cshtml" />
+    <Content Include="Views\Grafic\Index.cshtml" />
+    <Content Include="Views\Grafic\PartialChartSkill.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

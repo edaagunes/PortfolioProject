@@ -50,6 +50,14 @@
           <Property Name="Title" Type="nvarchar" MaxLength="50" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
         </EntityType>
+        <EntityType Name="GraficChart">
+          <Key>
+            <PropertyRef Name="ChartID" />
+          </Key>
+          <Property Name="ChartID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SkillName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SkillValue" Type="tinyint" />
+        </EntityType>
         <EntityType Name="Message">
           <Key>
             <PropertyRef Name="MessageID" />
@@ -154,6 +162,7 @@
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Experience" EntityType="Self.Experience" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GraficChart" EntityType="Self.GraficChart" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
@@ -307,6 +316,7 @@
           <EntitySet Name="Skill" EntityType="MyPortfolioDbModel.Skill" />
           <EntitySet Name="SocialMedia" EntityType="MyPortfolioDbModel.SocialMedia" />
           <EntitySet Name="Admin" EntityType="MyPortfolioDbModel.Admin" />
+          <EntitySet Name="GraficChart" EntityType="MyPortfolioDbModel.GraficChart" />
         </EntityContainer>
         <EntityType Name="Skill">
           <Key>
@@ -334,6 +344,14 @@
           <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GraficChart">
+          <Key>
+            <PropertyRef Name="ChartID" />
+          </Key>
+          <Property Name="ChartID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SkillName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SkillValue" Type="Byte" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -482,6 +500,15 @@
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GraficChart">
+            <EntityTypeMapping TypeName="MyPortfolioDbModel.GraficChart">
+              <MappingFragment StoreEntitySet="GraficChart">
+                <ScalarProperty Name="SkillValue" ColumnName="SkillValue" />
+                <ScalarProperty Name="SkillName" ColumnName="SkillName" />
+                <ScalarProperty Name="ChartID" ColumnName="ChartID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

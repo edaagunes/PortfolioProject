@@ -1,6 +1,7 @@
 ﻿@model List<Project1Portfolio.Models.Category>
 @{
     Layout = "~/Views/Admin/Index.cshtml";
+   
 }
 
 <h2 class="mb-4">Mesaj Kategorileri Sayfası</h2>
@@ -19,7 +20,10 @@
         {
             <tr>
                 <td>@item.CategoryID</td>
+
+
                 <td>@item.CategoryName</td>
+
                 <td>@item.CategoryStatus</td>
 
                 <td><a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a></td>

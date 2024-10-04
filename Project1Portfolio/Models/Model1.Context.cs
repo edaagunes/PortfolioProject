@@ -38,5 +38,6 @@ namespace Project1Portfolio.Models
         public virtual DbSet<Skill> Skill { get; set; }
         public virtual DbSet<SocialMedia> SocialMedia { get; set; }
         public virtual DbSet<Admin> Admin { get; set; }
+        public virtual DbSet<GraficChart> GraficChart { get; set; }
     }
 }

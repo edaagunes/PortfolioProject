@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Inbox";
     Layout = "~/Views/Admin/Index.cshtml";
+    string color = "";
 }
 
 <h2 class="mb-4">Gelen Mesajlar</h2>
@@ -18,14 +19,44 @@
         <th>Mesajı Aç</th>
     </tr>
 
+
     @foreach (var item in Model)
     {
+        switch (item.Category.CategoryName)
+        {
+            case "Teşekkür":
+                color = "lightpink";
+                break;
+
+            case "Proje Talebi":
+                color = "lightblue";
+                break;
+
+            case "Şikayet":
+                color = "lightsalmon";
+                break;
+
+            case "Öneri":
+                color = "lightgreen";
+                break;
+
+            case "Kutlama":
+                color = "lightgoldenrodyellow";
+                break;
+
+            default:
+                color = "lightgray"; // Default background color
+                break;
+        }
+
         <tr>
             <td>@item.MessageID</td>
             <td>@item.Name</td>
             <td>@item.Subject</td>
             <td>@item.SendDate</td>
-            <td>@item.Category.CategoryName</td>
+            <td style="background-color: @color;">@item.Category.CategoryName</td>
+
+
             @if (item.IsRead == false)
             {
                 <td><a href="/Message/MessageStatusChangeToTrue/@item.MessageID" class="btn btn-info">Okundu Olarak İşaretle</a></td>
@@ -38,5 +69,6 @@
             <td><a href="#" class="btn btn-danger">Sil</a></td>
             <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-secondary">Mesajı Aç</a></td>
         </tr>
+
     }
 </table>

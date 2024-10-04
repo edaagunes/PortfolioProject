@@ -27,13 +27,13 @@
             <tr>
                 <td>@item.ProfileID</td>
                 <td>@item.Title</td>
-                <td>@item.Description</td>
-                <td>@item.Address</td>
-                <td>@item.Email</td>
+                <td>@item.Description.Substring(0,10)</td>
+                <td>@item.Address.Substring(0,5)</td>
+                <td>@item.Email.Substring(0,10)</td>
                 <td>@item.PhoneNumber</td>
-                <td>@item.Github</td>
-                <td>@item.ImageUrl</td>
-                <td>@item.MapLocation</td>
+                <td>@item.Github.Substring(0, 10)</td>
+                <td>@item.ImageUrl.Substring(0, 20)</td>
+                <td>@item.MapLocation.Substring(0, 20)</td>
 
                 <td><a href="/Profile/DeleteProfile/@item.ProfileID" class="btn btn-danger">Sil</a></td>
                 <td><a href="/Profile/UpdateProfile/@item.ProfileID" class="btn btn-warning">Güncelle</a></td>

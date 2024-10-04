@@ -19,6 +19,7 @@
         <EntityTypeShape EntityType="MyPortfolioDbModel.Skill" Width="1.5" PointX="6.625" PointY="0.625" />
         <EntityTypeShape EntityType="MyPortfolioDbModel.SocialMedia" Width="1.5" PointX="10.25" PointY="0.625" />
         <EntityTypeShape EntityType="MyPortfolioDbModel.Admin" Width="1.5" PointX="8.375" PointY="0.625" />
+        <EntityTypeShape EntityType="MyPortfolioDbModel.GraficChart" Width="1.5" PointX="7.125" PointY="5.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

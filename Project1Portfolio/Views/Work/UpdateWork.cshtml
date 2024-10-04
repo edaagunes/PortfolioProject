@@ -17,10 +17,10 @@
     @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
     <br />
     <label>Fotoğraf</label>
-    @Html.TextAreaFor(x => x.ImageUrl, 6, 0, new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.ImageUrl, 6, 0, new { @class = "form-control", rows = 3 })
     <br />
     <label>Github</label>
-    @Html.TextAreaFor(x => x.ImageUrl, 2, 0, new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.ImageUrl, 6, 0, new { @class = "form-control", rows = 3 })
     <br />
     <button class="btn btn-success">Güncelle</button>
 </form>

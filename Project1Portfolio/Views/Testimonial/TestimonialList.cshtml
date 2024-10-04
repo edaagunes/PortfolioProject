@@ -24,8 +24,8 @@
                 <td>@item.TestimonialID</td>
                 <td>@item.Name</td>
                 <td>@item.Title</td>
-                <td>@item.Comment</td>
-                <td>@item.ImageUrl</td>
+                <td>@item.Comment.Substring(0,10)</td>
+                <td>@item.ImageUrl.Substring(0,10)</td>
 
                 <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-danger">Sil</a></td>
                 <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialID" class="btn btn-warning">Güncelle</a></td>

@@ -6,15 +6,16 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using PagedList.Mvc;
+using Newtonsoft.Json.Linq;
 
 namespace Project1Portfolio.Controllers
 {
     public class SkillController : Controller
     {
-        MyPortfolioDbEntities context= new MyPortfolioDbEntities();
-        public ActionResult SkillList(int page=1)
+        MyPortfolioDbEntities context = new MyPortfolioDbEntities();
+        public ActionResult SkillList(int page = 1)
         {
-            var values = context.Skill.ToList().ToPagedList(page,5);
+            var values = context.Skill.ToList().ToPagedList(page, 5);
             return View(values);
         }
 
@@ -58,5 +59,7 @@ namespace Project1Portfolio.Controllers
             context.SaveChanges();
             return RedirectToAction("SkillList");
         }
+
+       
     }
 }

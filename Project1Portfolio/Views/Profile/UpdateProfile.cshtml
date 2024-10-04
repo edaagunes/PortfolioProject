@@ -14,7 +14,7 @@
     @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
     <br />
     <label>Açıklama</label>
-    @Html.TextAreaFor(x => x.Description, 6, 0, new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.Description, 6, 0, new { @class = "form-control", rows = 5 })
     <br />
     <label>Adres</label>
     @Html.TextAreaFor(x => x.Address, 2, 0, new { @class = "form-control" })
@@ -26,13 +26,13 @@
     @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
     <br />
     <label>Github</label>
-    @Html.TextBoxFor(x => x.Github, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Github, new { @class = "form-control" ,rows=1})
     <br />
     <label>Fotoğraf</label>
-    @Html.TextAreaFor(x => x.Description, 3, 0, new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.ImageUrl, 3, 0, new { @class = "form-control", rows = 5 })
     <br />
     <label>Lokasyon</label>
-    @Html.TextAreaFor(x => x.MapLocation, 6, 0, new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.MapLocation, 6, 0, new { @class = "form-control", rows = 5 })
     <br />
     <button class="btn btn-success">Güncelle</button>
 </form>

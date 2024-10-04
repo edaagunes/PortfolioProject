@@ -24,8 +24,8 @@
                 <td>@item.WorkID</td>
                 <td>@item.Title</td>
                 <td>@item.Description</td>
-                <td>@item.ImageUrl</td>
-                <td>@item.GithubUrl</td>
+                <td>@item.ImageUrl.Substring(0,15)</td>
+                <td>@item.GithubUrl.Substring(0,15)</td>
 
                 <td><a href="/Work/DeleteWork/@item.WorkID" class="btn btn-danger">Sil</a></td>
                 <td><a href="/Work/UpdateWork/@item.WorkID" class="btn btn-warning">Güncelle</a></td>
