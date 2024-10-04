@@ -39,5 +39,24 @@ namespace Project1Portfolio.Controllers
             context.SaveChanges();
             return RedirectToAction("SkillList");
         }
+
+
+        [HttpGet]
+        public ActionResult UpdateSkill(int id)
+        {
+            var value = context.Skill.Find(id);
+            return View(value);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateSkill(Skill skill)
+        {
+            var value = context.Skill.Find(skill.SkillID);
+            value.Title = skill.Title;
+            value.Icon = skill.Icon;
+            value.Value = skill.Value;
+            context.SaveChanges();
+            return RedirectToAction("SkillList");
+        }
     }
 }

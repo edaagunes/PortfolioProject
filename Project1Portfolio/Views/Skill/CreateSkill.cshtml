@@ -9,13 +9,13 @@
 
 <form method="post">
     <label>Yetenek Başlığı</label>
-    <input type="text" name="Title" required class="form-control" />
+    <input type="text" name="Title" required maxlength="20" autofocus class="form-control" />
     <br />
     <label>Yetenek İkonu</label>
     <input type="text" name="Icon" class="form-control" />
     <br />
     <label>Yetenek Değeri</label>
-    <input type="text" name="Value" class="form-control" />
+    <input type="text" name="Value" required maxlength="3" placeholder="0-100 arasında değer giriniz" class="form-control" />
     <br />
     <button class="btn btn-info">Yeteneği Oluştur</button>
 </form>

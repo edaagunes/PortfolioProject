@@ -1,20 +1,22 @@
-﻿<nav id="sidebar">
+﻿@model Project1Portfolio.Models.About
+<nav id="sidebar">
     <div class="p-4 pt-5">
-        <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(/Content/bootstrap-sidebar-01/sidebar-01/images/logo.jpg);"></a>
+        <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(@ViewBag.imageUrl);"></a>
         <ul class="list-unstyled components mb-5">
             
-            <li><a href="#">Hakkımda</a> </li>
-            <li><a href="#">Kategoriler</a> </li>
-            <li><a href="#">Eğitim Hayatım</a> </li>
+            <li><a href="/About/AboutIndex">Hakkımda</a> </li>
+            <li><a href="/Category/CategoryList">Kategoriler</a> </li>
+            <li><a href="/Education/EducationList">Eğitim Hayatım</a> </li>
             <li><a href="/Experience/ExperienceList/">Deneyimlerim</a> </li>
             <li><a href="/Message/Inbox/">Gelen Mesajlar</a> </li>
-            <li><a href="#">Profilim</a> </li>
-            <li><a href="#">Hizmetler</a> </li>
+            <li><a href="/Profile/ProfileIndex">Profilim</a> </li>
+            <li><a href="/Service/ServiceIndex">Hizmetler</a> </li>
             <li><a href="/Skill/SkillList/">Yeteneklerim</a> </li>
-            <li><a href="#">Referanslar</a> </li>
-            <li><a href="#">Çalışmalarım</a> </li>
-            <li><a href="#">Ayarlar</a> </li>
-            <li><a href="#">Çıkış Yap</a> </li>
+            <li><a href="/Testimonial/TestimonialList">Referanslar</a> </li>
+            <li><a href="/Work/WorkList">Çalışmalarım</a> </li>
+            <li><a href="/SocialMedia/Index/">Sosyal Medya</a> </li>
+            <li><a href="/Settings/SettingsIndex">Ayarlar</a> </li>
+            <li><a href="/Default/Index">Çıkış Yap</a> </li>
         </ul>
 
         <div class="footer">

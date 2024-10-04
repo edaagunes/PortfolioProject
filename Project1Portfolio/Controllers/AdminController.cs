@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Project1Portfolio.Models;
 
 namespace Project1Portfolio.Controllers
 {
     public class AdminController : Controller
     {
-        
+        MyPortfolioDbEntities context = new MyPortfolioDbEntities();
         public ActionResult Index()
         {
             return View();
@@ -21,6 +22,7 @@ namespace Project1Portfolio.Controllers
 
         public PartialViewResult PartialSideBar()
         {
+            ViewBag.imageUrl=context.About.Select(x => x.ImageUrl).FirstOrDefault();
             return PartialView();
         }
 

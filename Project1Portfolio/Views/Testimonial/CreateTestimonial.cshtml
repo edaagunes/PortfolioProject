@@ -1,0 +1,26 @@
+﻿@model Project1Portfolio.Models.Testimonial
+@{
+    ViewBag.Title = "CreateTestimonial";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Referans Ekleme Sayfası</h2>
+
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.TestimonialID, new { @class = "form-control" })
+    <label>Ad</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Yorum</label>
+    @Html.TextAreaFor(x => x.Comment, 6, 0, new { @class = "form-control" })
+    <br />
+    <label>Fotoğraf</label>
+    @Html.TextAreaFor(x => x.ImageUrl, 2, 0, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Ekle</button>
+</form>

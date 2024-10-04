@@ -1,0 +1,44 @@
+﻿@model List<Project1Portfolio.Models.SocialMedia>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Sosyal Medya</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Sosyal Medya</th>
+        <th>Icon</th>
+        <th>Url</th>
+        <th>Durum</th>
+        <th>Değiştir</th>
+        @*<th>Sil</th>*@
+        <th>Düzenle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SocialMediaID</td>
+            <td>@item.Title</td>
+            <td>@item.Icon</td>
+            <td>@item.SocialMediaUrl</td>
+            <td>@item.Status</td>
+            @if (item.Status == false)
+            {
+                <td><a href="/SocialMedia/StatusChangeToTrue/@item.SocialMediaID" class="btn btn-info">Aktif Olarak İşaretle</a></td>
+            }
+            else
+            {
+                <td><a href="/SocialMedia/StatusChangeToFalse/@item.SocialMediaID" class="btn btn-warning">Pasif Olarak İşaretle</a></td>
+            }
+
+            @*<td><a href="#" class="btn btn-danger">Sil</a></td>*@
+            <td><a href="/SocialMedia/UpdateSocialMedia/@item.SocialMediaID" class="btn btn-outline-primary">Düzenle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/SocialMedia/CreateSocialMedia/" class="btn btn-info">Ekle</a>

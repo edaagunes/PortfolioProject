@@ -1,0 +1,27 @@
+﻿@model Project1Portfolio.Models.Work
+@{
+    ViewBag.Title = "UpdateWork";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Çalışma Güncelleme Sayfası</h2>
+
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.WorkID, new { @class = "form-control" })
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <label>Fotoğraf</label>
+    @Html.TextAreaFor(x => x.ImageUrl, 6, 0, new { @class = "form-control" })
+    <br />
+    <label>Github</label>
+    @Html.TextAreaFor(x => x.ImageUrl, 2, 0, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>
+
